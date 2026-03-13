@@ -273,6 +273,12 @@ Streamlit will automatically launch the app at:
 http://localhost:8501
 ```
 
+## Deployment
+
+This project is deployed using **Streamlit Community Cloud**.
+
+The live app is available at: https://career-advisor-chatbot.streamlit.app
+
 ## Example Queries
 
 Users can interact with the chatbot by asking questions like:
