@@ -290,3 +290,5 @@ Users can interact with the chatbot by asking questions like:
 - _What are the risks of switching careers into AI?_
 
 The chatbot will generate **structured, actionable career advice.**
+
+---
