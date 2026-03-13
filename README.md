@@ -1,4 +1,4 @@
-# Career Advisor Chatbot
+# Career Advisor Chatbot (GenAI)
 
 ### Live App: https://career-advisor-chatbot.streamlit.app
 
@@ -252,11 +252,21 @@ venv\Scripts\activate
 ```
 pip install -r requirements.txt
 ```
-**4.** Run the Streamlit application.
+**4.** Configure Gemini API Key.
+
+Create a **Streamlit secrets file:**
+```
+.streamlit/secrets.toml
+```
+Add your API key:
+```
+GEMINI_API_KEY = "your_api_key_here"
+```
+**5.** Run the Streamlit application.
 ```
 streamlit run app.py
 ```
-**5.** Open in browser.
+**6.** Open in browser.
 
 Streamlit will automatically launch the app at:
 ```
