@@ -173,14 +173,12 @@ Career_Advisor_Chatbot_GenAI/
 │   └── exceptions.py
 │
 └── assets/
-    └── ui_styles.py           # Streamlit UI styling
+    └── ui_styles.py
 
 ```
 
 ### app.py
-Main Streamlit application entry point.
-
-Responsibilities:
+Main Streamlit application entry point. Responsibilities include:
 - UI rendering
 - Handling chat input
 - Managing session state
@@ -192,14 +190,87 @@ The application initializes conversation memory and processes user queries throu
 ### core/
 Contains the **core backend logic** of the chatbot.
 
-### gemini_client.py
-
-Handles communication with the **Google Gemini API**.
-
-Responsibilities:
+#### gemini_client.py
+Handles communication with the **Google Gemini API**. Responsibilities include:
 - API client initialization
 - Model selection
 - Response generation
 - Error handling
 
 The model used is **gemini-2.5-flash-lite** for fast responses.
+
+#### prompt_manager.py
+Responsible for **prompt engineering**. Creates structured prompts that guide the AI to generate high-quality responses. The prompt includes:
+- role definition
+- response rules
+- structured output format
+
+#### memory_manager.py
+Manages **conversation history**. Stores recent chat interactions and passes them as context to the model. Memory size is configurable and limited to recent turns to avoid token overflow.
+
+#### response_handler.py
+Processes model responses before displaying them. Responsibilities include:
+- cleaning responses
+- handling empty outputs
+- formatting final responses
+
+### utils/
+Utility modules used across the project.
+
+#### logger.py
+Provides centralized logging functionality for the application. Used for debugging and monitoring API behavior.
+
+#### exceptions.py
+
+Defines custom exceptions used in the application. Example: `GeminiAPIException`
+
+### config/
+
+Contains configuration settings for the application. Example settings include:
+- application name
+- conversation memory limits
+
+### assets/
+
+Contains UI styling resources. Custom CSS is used to slightly enhance chat message formatting.
+
+## Running the Project Locally
+**1.** Clone the repository.
+```
+git clone https://github.com/Avik-Das-567/Career_Advisor_Chatbot_GenAI.git
+cd Career_Advisor_Chatbot_GenAI
+```
+**2.** Create a Virtual Environment.
+```
+python -m venv venv
+```
+Activate it: 
+```
+venv\Scripts\activate
+```
+**3.** Install dependencies.
+```
+pip install -r requirements.txt
+```
+**4.** Run the Streamlit application.
+```
+streamlit run app.py
+```
+**5.** Open in browser.
+
+Streamlit will automatically launch the app at:
+```
+http://localhost:8501
+```
+
+## Example Queries
+
+Users can interact with the chatbot by asking questions like:
+
+- _What skills do I need to become a data scientist?_
+- _How can I transition from mechanical engineering to software development?_
+- _Is cybersecurity a good career path in 2026?_
+- _What roadmap should I follow to become a machine learning engineer?_
+- _What are the risks of switching careers into AI?_
+
+The chatbot will generate **structured, actionable career advice.**
