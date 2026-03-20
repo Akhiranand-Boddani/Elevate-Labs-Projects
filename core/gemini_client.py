@@ -12,7 +12,7 @@ class GeminiClient:
 
         self.client = genai.Client(api_key=api_key)
 
-        self.model_name = "gemini-3.1-flash-lite-preview"
+        self.model_name = "gemini-2.5-flash-lite"
 
     def generate_response(self, prompt: str) -> str:
         try:
