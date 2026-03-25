@@ -3,12 +3,13 @@ class ConversationMemory:
         self.history = []
         self.max_turns = max_turns
 
-    def update(self, user_input: str, assistant_response: str):
-        self.history.append(
-            f"User: {user_input}\nAdvisor: {assistant_response}"
-        )
-        if len(self.history) > self.max_turns:
-            self.history.pop(0)
+    def update(self, role: str, content: str):
+        self.history.append({"role": role, "content": content})
+        if len(self.history) > self.max_turns * 2:
+            self.history = self.history[-(self.max_turns * 2):]
 
-    def get_context(self) -> str:
-        return "\n".join(self.history)
+    def get_messages(self) -> list:
+        return self.history
+
+    def clear(self):
+        self.history = []
