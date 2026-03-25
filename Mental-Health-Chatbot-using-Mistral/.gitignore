@@ -1,0 +1,24 @@
+# Environment Variables
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.venv/
+
+# Streamlit
+.streamlit/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Project-specific documentation (personal work)
+ARCHITECTURE.md
+GEMINI.md
+
+# Testing data
+Testing Text/
